@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eee;
+    height: 100vh;
+    font-size: 14px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+#cabecalho-container {
+    background-color: #FFF;
+    padding: 1.3em;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon-group {
+    display: flex; 
+    padding: 2em;
+}
+
+.barra-pesquisa {
+    padding: 1em; 
+    width: 500px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.lista-menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1em;
+    background-color: #000;
+    color: #FFF; list-style-type: none;
+}
+
+.item-lista {
+    cursor: pointer;
+}
+
+.item-lista:hover {
+    color: #FF0000;
+    text-decoration: underline;
+}
+
+.destaque {
+    color: #FF0000;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.container-produtos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.box-produto {
+    width: 370px;
+    height: 430px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+.img-produto {
+    border-radius: 10px;
+    border: 6px solid #1e1e1e;
+    width: 350px;
+    height: 350px;
+}
+
+.img-produto:hover {
+    cursor: pointer;
+    border: 6px solid #EEE;
+    width: 380px;
+    height: 400px;
+    transition: 0.3s;
+}
+
+.info-produto {
+    text-align: center;
+}
+
+.preco-produto {
+    font-weight: bold; 
+    color: #FF0000;
+}
+
+#principal-container {
+    padding: 1em;
+}
+
+#rodape-container {
+    background-color: #000;
+    padding: 3em;
+    text-align: center;
+}
