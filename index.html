@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Home - JR Sportshop</title>
 </head>
 <body>
-    <header id="cabecalho-container">
+    <header class="cabecalho">
         <nav class="navbar">
             <a href="index.html"><img src="imagens/logo.png"></a>
-            <input class="barra-pesquisa" type="text" placeholder="O que está procurando?">
+            <input class="barra-pesquisa" type="search" placeholder="O que está procurando?">
             <div class="icon-group">
                 <a href="#"><img src="imagens/user.png" alt="" style="padding: 1em;"></a>
                 <a href="#"><img src="imagens/carrinho.png" alt="" style="padding: 1em;"></a>
@@ -19,106 +21,131 @@
         </nav>
         <div style="margin-top: 1em;">
             <ul class="lista-menu">
-                <li class="item-lista destaque">MAIS VENDIDOS</li>
-                <li class="item-lista">BONÉS</li>
-                <li class="item-lista">BOLAS</li>
-                <li class="item-lista">CAMISAS</li>
-                <li class="item-lista">CHINELOS</li>
-                <li class="item-lista">MEIAS</li>
-                <li class="item-lista">TÊNIS</li>
+                <li class="item-lista"><a style="color: red;" href="index.html">MAIS VENDIDOS</a></li>
+                <li class="item-lista"><a href="bones.html">BONÉS</a></li>
+                <li class="item-lista"><a href="bolas.html">BOLAS</a></li>
+                <li class="item-lista"><a href="camisas.html">CAMISAS</a></li>
+                <li class="item-lista"><a href="chinelos.html">CHINELOS</a></li>
+                <li class="item-lista"><a href="meias.html">MEIAS</a></li>
+                <li class="item-lista"><a href="tenis.html">TÊNIS</a></li>
             </ul>
         </div>
     </header>
-    <main id="principal-container">
-        <section class="container-produtos">
-            <div class="box-produto">
-                <img class="img-produto" src="imagens/camisa_fla.jpg" alt="">
-                <div class="info-produto">
-                    <h2>Camisa Flamengo Authentic 22/23</h2>
-                    <h3 class="preco-produto">R$ 299.99</h3>
+    <div style="display: flex; justify-content: space-around;">
+        <main class="principal-container">
+            <section class="container-produtos">
+                <div class="box-produto">
+                    <img class="img-produto" src="imagens/camisa_fla.jpg" alt="">
+                    <div class="info-produto">
+                        <h2 class="nome-produto">Camisa Flamengo 22/23</h2>
+                        <h3 class="preco-produto">R$ 299.99</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="box-produto">
-                <img class="img-produto" src="imagens/bola_champions.jpg" alt="">
-                <div class="info-produto">
-                    <h2>Bola Champions League 23/24</h2>
-                    <h3 class="preco-produto">R$ 159.99</h3>
+                <div class="box-produto">
+                    <img class="img-produto" src="imagens/bola_champions.jpg" alt="">
+                    <div class="info-produto">
+                        <h2 class="nome-produto">Bola Champions League 23/24</h2>
+                        <h3 class="preco-produto">R$ 159.99</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="box-produto">
-                <img class="img-produto" src="imagens/nike.jpg" alt="">
-                <div class="info-produto">
-                    <h2>Tênis Nike Air Max</h2>
-                    <h3 class="preco-produto">R$ 259.99</h3>
+                <div class="box-produto">
+                    <img class="img-produto" src="imagens/nike.jpg" alt="">
+                    <div class="info-produto">
+                        <h2 class="nome-produto">Tênis Nike Air Max</h2>
+                        <h3 class="preco-produto">R$ 259.99</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="box-produto">
-                <img class="img-produto" src="imagens/jabulani.jpg" alt="">
-                <div class="info-produto">
-                    <h2>Bola Jabulani World Cup 2010</h2>
-                    <h3 class="preco-produto">R$ 159.99</h3>
+                <div class="box-produto">
+                    <img class="img-produto" src="imagens/jabulani.jpg" alt="">
+                    <div class="info-produto">
+                        <h2 class="nome-produto">Bola Jabulani World Cup 2010</h2>
+                        <h3 class="preco-produto">R$ 119.99</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="box-produto">
-                <img class="img-produto" src="imagens/camisa_galo.jpg" alt="">
-                <div class="info-produto">
-                    <h2>Camisa Atlético MG 22/23</h2>
-                    <h3 class="preco-produto">R$ 199.99</h3>
+                <div class="box-produto">
+                    <img class="img-produto" src="imagens/camisa_galo.jpg" alt="">
+                    <div class="info-produto">
+                        <h2 class="nome-produto">Camisa Atlético MG 22/23</h2>
+                        <h3 class="preco-produto">R$ 199.99</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="box-produto">
-                <img class="img-produto" src="imagens/tenis_olympikus.jpg" alt="">
-                <div class="info-produto">
-                    <h2>Tênis Olympikus King</h2>
-                    <h3 class="preco-produto">R$ 179.99</h3>
+                <div class="box-produto">
+                    <img class="img-produto" src="imagens/tenis_olympikus.jpg" alt="">
+                    <div class="info-produto">
+                        <h2 class="nome-produto">Tênis Olympikus King</h2>
+                        <h3 class="preco-produto">R$ 179.99</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="box-produto">
-                <img class="img-produto" src="imagens/chinelo_couro.png" alt="">
-                <div class="info-produto">
-                    <h2>Chinelo Rotline Couro</h2>
-                    <h3 class="preco-produto">R$ 99.99</h3>
+                <div class="box-produto">
+                    <img class="img-produto" src="imagens/chinelo_couro.png" alt="">
+                    <div class="info-produto">
+                        <h2 class="nome-produto">Chinelo Rotline Couro</h2>
+                        <h3 class="preco-produto">R$ 99.99</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="box-produto">
-                <img class="img-produto" src="imagens/bone_puma.jpg" alt="">
-                <div class="info-produto">
-                    <h2>Boné Puma Laranja</h2>
-                    <h3 class="preco-produto">R$ 99.99</h3>
+                <div class="box-produto">
+                    <img class="img-produto" src="imagens/bone_puma.jpg" alt="">
+                    <div class="info-produto">
+                        <h2 class="nome-produto">Boné Puma Laranja</h2>
+                        <h3 class="preco-produto">R$ 99.99</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="box-produto">
-                <img class="img-produto" src="imagens/adidas_bone.jpg" alt="">
-                <div class="info-produto">
-                    <h2>Boné Adidas Cinza</h2>
-                    <h3 class="preco-produto">R$ 109.99</h3>
+                <div class="box-produto">
+                    <img class="img-produto" src="imagens/adidas_bone.jpg" alt="">
+                    <div class="info-produto">
+                        <h2 class="nome-produto">Boné Adidas Cinza</h2>
+                        <h3 class="preco-produto">R$ 109.99</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="box-produto">
-                <img class="img-produto" src="imagens/meia_adidas.png" alt="">
-                <div class="info-produto">
-                    <h2>Meias 3 Pares Adidas</h2>
-                    <h3 class="preco-produto">R$ 59.99</h3>
+                <div class="box-produto">
+                    <img class="img-produto" src="imagens/meia_adidas.png" alt="">
+                    <div class="info-produto">
+                        <h2 class="nome-produto">Meias 3 Pares Adidas</h2>
+                        <h3 class="preco-produto">R$ 59.99</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="box-produto">
-                <img class="img-produto" src="imagens/hurley_chinelo.png" alt="">
-                <div class="info-produto">
-                    <h2>Chinelo Hurley</h2>
-                    <h3 class="preco-produto">R$ 49.99</h3>
+                <div class="box-produto">
+                    <img class="img-produto" src="imagens/hurley_chinelo.png" alt="">
+                    <div class="info-produto">
+                        <h2 class="nome-produto">Chinelo Hurley</h2>
+                        <h3 class="preco-produto">R$ 49.99</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="box-produto">
-                <img class="img-produto" src="imagens/meia_nike.png" alt="">
-                <div class="info-produto">
-                    <h2>Meias 3 Pares Nike</h2>
-                    <h3 class="preco-produto">R$ 89.99</h3>
+                <div class="box-produto">
+                    <img class="img-produto" src="imagens/meia_nike.png" alt="">
+                    <div class="info-produto">
+                        <h2 class="nome-produto">Meias 3 Pares Nike</h2>
+                        <h3 class="preco-produto">R$ 89.99</h3>
+                    </div>
                 </div>
-            </div>
-        </section>
-    </main>
-    <footer id="rodape-container">
-       <p style="color: #FFF;">Todos os direitos reservados</p>
+            </section>
+        </main>
+        <aside class="carrinho">
+            <p class="header-carrinho">Meu Carrinho</p>
+            <ul class="lista-carrinho">
+            </ul>
+            <p id="valor-total">Total: R$ 0.00 </p>
+            <button id="btn-comprar" type="button">Finalizar compra</button>
+        </aside>
+    </div>
+    <footer class="rodape">
+        <div class="redes-sociais">
+            <a class="item-link" target="_blank" href="https://www.instagram.com/renanaguiars_/">
+                <img class="icon-sm" src="imagens/instagram.png" alt="Icone do Instagram">
+            </a>
+            <a class="item-link" target="_blank" href="https://github.com/renanaguiars">
+                <img class="icon-sm" src="imagens/placa-do-github.png" alt="Icone do Github">
+            </a>
+            <a class="item-link" target="_blank" href="https://www.linkedin.com/in/renan-de-aguiars/">
+                <img class="icon-sm" src="imagens/linkedin.png" alt="Icone do Linkedin">
+            </a>
+        </div>
+        <div class="info-rodape">
+            <p>Todos os direitos reservados &copy;</p>
+            <p>Desenvolvido por Renan Aguiar - 2024</p>
+        </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/carrinho.js"></script>
 </body>
 </html>
