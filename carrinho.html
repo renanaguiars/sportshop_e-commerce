@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="dist/css/reset.css">
+    <link rel="stylesheet" href="dist/css/style.css">
     <title>Carrinho - JR Sportshop</title>
 </head>
 <body>
     <header class="cabecalho">
         <nav class="navbar">
-            <a href="index.html"><img class="img-logo" src="imagens/logo.png"></a>
+            <a href="index.html"><img class="img-logo" src="dist/imagens/logo.png"></a>
             <input class="barra-pesquisa" type="search" placeholder="O que está procurando?">
             <div class="icon-group">
-                <a class="icon-a" href="#"><img src="imagens/user.png"></a>
-                <a class="icon-a" href="#"><img src="imagens/carrinho.png"></a>
+                <a class="icon-a" href="#"><img src="dist/imagens/user.png"></a>
+                <a class="icon-a" href="#"><img src="dist/imagens/carrinho.png"></a>
             </div>
         </nav>
         <div style="margin-top: 1em;">
@@ -37,11 +37,11 @@
             <div style="display: flex; flex-direction: column; justify-content: center; gap: 1px;" id="listaCarrinho"></div>
             <p id="total"></p>
             <div class="btn-group">
-                <button class="btn" id="limpar">Limpar</button>
+                <button class="btn" id="limpar" onclick="limparCarrinho()">Limpar</button>
                 <button class="btn" id="comprar">Comprar</button>
             </div>
         </div>
     </main>
     </div>
-    <script src="js/carrinho.js"></script>
+    <script src="dist/js/carrinho.js"></script>
 </body>
