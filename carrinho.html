@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Carrinho - JR Sportshop</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <nav class="navbar">
+            <a href="index.html"><img class="img-logo" src="imagens/logo.png"></a>
+            <input class="barra-pesquisa" type="search" placeholder="O que está procurando?">
+            <div class="icon-group">
+                <a class="icon-a" href="#"><img src="imagens/user.png"></a>
+                <a class="icon-a" href="#"><img src="imagens/carrinho.png"></a>
+            </div>
+        </nav>
+        <div style="margin-top: 1em;">
+            <ul class="lista-menu">
+                <li class="item-lista"><a href="index.html">MAIS VENDIDOS</a></li>
+                <li class="item-lista"><a href="bones.html">BONÉS</a></li>
+                <li class="item-lista"><a href="bolas.html">BOLAS</a></li>
+                <li class="item-lista"><a href="camisas.html">CAMISAS</a></li>
+                <li class="item-lista"><a href="chinelos.html">CHINELOS</a></li>
+                <li class="item-lista"><a href="meias.html">MEIAS</a></li>
+                <li class="item-lista"><a href="tenis.html">TÊNIS</a></li>
+            </ul>
+        </div>
+    </header>
+    <div style="display: flex; justify-content: space-around;">
+    <main class="principal-container">
+        <div class="box-lista-carrinho">
+            <h1 style="font-size: 35px; padding: 10px;">Carrinho</h1>
+            <div style="display: flex; flex-direction: column; justify-content: center; gap: 1px;" id="listaCarrinho"></div>
+            <p id="total"></p>
+            <div class="btn-group">
+                <button class="btn" id="limpar">Limpar</button>
+                <button class="btn" id="comprar">Comprar</button>
+            </div>
+        </div>
+    </main>
+    </div>
+    <script src="js/carrinho.js"></script>
+</body>

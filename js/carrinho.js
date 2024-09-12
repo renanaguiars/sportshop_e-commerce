@@ -1,58 +1,75 @@
-document.addEventListener("DOMContentLoaded", function() {
+let listaProdutos = document.querySelectorAll('.box-produto');
+let nomeProdutos = document.querySelectorAll('.nome-produto');
+let precoProdutos = document.querySelectorAll('.preco-produto');
+let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
-    let carrinho = [];
+selecionarProdutos();
+
+function selecionarProdutos() {
+    for (let i = 0; i < listaProdutos.length; i++) {
+        listaProdutos[i].addEventListener("click", (event) => {
+            event.preventDefault();
     
-    const nomeProduto = document.querySelectorAll(".nome-produto");
-    const precoProduto = document.querySelectorAll(".preco-produto");
-    const imagemProduto = document.querySelectorAll(".img-produto");
-    const listaCarrinho = document.querySelector(".lista-carrinho");
-    const valorTotal = document.querySelector("#valor-total");
-    const btnComprar = document.querySelector("#btn-comprar");
-
-    for (let i = 0; i < nomeProduto.length; i++) {
-        imagemProduto[i].addEventListener("click", () => {
-            let produto = nomeProduto[i].textContent;
-            let preco = parseFloat(precoProduto[i].textContent.replace("R$ ", ""));
-            
-            let index = carrinho.findIndex(item => item.produto === produto);
-
-            if(index !== -1) {
-                carrinho[index].quantidade++;
-                valorTotal.removeAttribute("hidden")
+            let product = nomeProdutos[i].textContent;
+            let price = parseFloat(precoProdutos[i].textContent.replace('R$', '').trim());
+            let quantity = 1;
+    
+            let produtoExistente = carrinho.find(item => item.nome === product);
+    
+            if (produtoExistente) {
+                produtoExistente.quantidade += 1;
             } else {
-                carrinho.push({
-                    produto: produto,
-                    preco: preco,
-                    quantidade: 1
-                });
+                let objProduto = {
+                    nome: product,
+                    preco: price,
+                    quantidade: quantity
+                };
+                carrinho.push(objProduto);
             }
-
-            atualizarListaCarrinho();
-            atualizarValorTotal();
+    
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    
+            calcularTotal();
+            criarElementos();
+    
+            console.log(carrinho);
         });
     }
+}
 
-    btnComprar.onclick = limparCarrinho;
+function criarElementos() {
+    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    let listaCarrinho = document.getElementById('listaCarrinho');
+    
+    listaCarrinho.innerHTML = '';
 
-    function limparCarrinho() {
-        alert("Compra realizada!")
-        carrinho.splice(0, carrinho.length)
-        atualizarListaCarrinho();
-        atualizarValorTotal();
-    }
+    if (carrinho.length > 0) {
+        carrinho.forEach(produto => {
+            let item = document.createElement('p');
+            item.classList.add('item-carrinho');
 
-    function atualizarListaCarrinho() {
-        listaCarrinho.innerHTML = "";
-
-        carrinho.forEach(item => {
-            let novoElemento = document.createElement("li");
-            novoElemento.textContent = `${item.quantidade}x ${item.produto} - R$ ${item.preco}`;
-            listaCarrinho.appendChild(novoElemento);
+            item.innerHTML = `<span>${produto.quantidade}x</span> <span>${produto.nome}</span> <span>R$ ${produto.preco.toFixed(2)}</span>`;
+            listaCarrinho.append(item);
         });
+    } 
+}
+
+function calcularTotal() {
+    let total = 0;
+
+    carrinho.forEach(item => {
+        total += item.preco * item.quantidade;
+    });
+
+    let totalElement = document.getElementById('total');
+    if (totalElement) {
+        totalElement.innerHTML = `Total: <span>R$ ${total.toFixed(2)}</span>`;
     }
 
-    function atualizarValorTotal() {
-        let total = carrinho.reduce((acc, item) => acc + (item.preco * item.quantidade), 0);
-        valorTotal.textContent = `Total: R$ ${total.toFixed(2)}`
-    }
-});
+    console.log(`Total: R$ ${total.toFixed(2)}`);
+}
+
+if (carrinho.length > 0) {
+    calcularTotal();
+    criarElementos();
+}
